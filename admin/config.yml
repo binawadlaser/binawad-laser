@@ -1,9 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: binawadlaser/binawadlaser
   branch: main
 
 media_folder: "images"
-public_folder: "/images"
+public_folder: "images"
 
 collections:
   - name: "products"
@@ -12,5 +13,11 @@ collections:
     create: true
     fields:
       - {label: "عنوان المنتج", name: "title", widget: "string"}
+      - {
+          label: "تصنيف/قسم المنتج", 
+          name: "category", 
+          widget: "select", 
+          options: ["ميداليات", "دروع وتكريم", "صناديق وهدايا", "ديكورات وتوزيعات", "أخرى"]
+        }
       - {label: "الصورة", name: "image", widget: "image"}
-      - {label: "الوصف", name: "description", widget: "text"}
+      - {label: "الوصف", name: "description", widget: "text", required: false}
